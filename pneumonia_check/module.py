@@ -14,12 +14,12 @@ class Pneumonia:
         except ImportError:
             import importlib_resources as pkg_resources
 
-        with pkg_resources.path("oleh_module_lib", "model.json") as json_file_path:
+        with pkg_resources.path("pneumonia_check", "model.json") as json_file_path:
             json_file = open(json_file_path, 'r')
             loaded_model_json = json_file.read()
             json_file.close()
             self.loaded_model = model_from_json(loaded_model_json)
-            with pkg_resources.path("oleh_module_lib", "model.h5") as h5_file_path:
+            with pkg_resources.path("pneumonia_check", "model.h5") as h5_file_path:
                 self.loaded_model.load_weights(h5_file_path)
                 print(self.loaded_model.summary())
                 print("Model successfully loaded from disk and ready for use.")

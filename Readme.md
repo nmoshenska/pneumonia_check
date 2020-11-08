@@ -1,12 +1,12 @@
 1. Create artifact/library/package
-python setup.py sdist bdist_wheel --universal
+python3 setup.py sdist bdist_wheel --universal
 
 2. Upload/deploy the package
 python3 -m twine upload --repository testpypi dist/*
 
 3. Download package
-pip install oleh-module-lib==0.2 --extra-index-url=https://test.pypi.org/simple/
-pip install -i https://test.pypi.org/simple/ oleh-module-lib==1.8
+pip install pneumonia_check==0.1 --extra-index-url=https://test.pypi.org/simple/
+pip install -i https://test.pypi.org/simple/ pneumonia_check==0.1
 
 0. file .pypirc
 [distutils]
